@@ -1,0 +1,93 @@
+	устанавливаем камеру в позицию
+x=-650
+y=204
+z=-205
+fov=100
+ry=-1.4
+rx=0
+rz=0
+!SetCamera
+	начинам с полной темноты
+target=ambient
+red=0
+green=0
+blue=0
+time=0.1
+type=PC
+!AddMover
+target=lamp
+!AddMover
+
+	начальная пауза
+time=3
+!Wait
+	выводим текст
+font=fntBig
+x=190
+y=380
+dx=40
+dy=15
+red=255
+green=255
+blue=255
+time=4
+startalpha=1
+endalpha=0
+text=Strange place...
+!AddText
+
+time=0.5
+!Wait
+
+font=fntSmall
+dx=60
+dy=25
+x=210
+y=420
+time=4
+text=night...
+!AddText
+
+time=1
+!Wait
+
+x=230
+y=440
+time=4
+text=and road...
+!AddText
+
+
+time=5
+!Wait
+	светает
+x=170
+y=80
+z=30
+time=6
+target=ambient
+red=30
+green=30
+blue=40
+!AddMover
+
+target=lamp
+red=255
+green=255
+blue=200
+!AddMover
+
+time=8
+!Wait
+	летим к точке
+x=-360
+y=50
+z=-170
+ry=-1.05
+rx=0
+rz=0
+type=PR
+target=camera
+time=5
+!AddMover
+

@@ -1,0 +1,48 @@
+— –»ѕ“ ƒЋя TV-экрана
+
+Ќј„јЋ№Ќјя ѕќ«»÷»я
+	камера
+!defaults
+x=330
+y=10
+z=177
+fov=100
+ry=2.9
+
+!SetCamera
+	фоновый свет
+red=50
+blue=80
+green=80
+type=ambient
+name=ambient
+!PlaceLight
+	направленный свет
+!Defaults
+red=140
+green=140
+blue=160
+type=point
+intense=200
+attenuationA=0.00001
+x=-360
+z=-600
+y=280
+name=point
+!PlaceLight
+name=
+
+	искажение линз
+type=distortion
+distortionA=0
+scale=0
+!SetEffect
+	уменьшение цвета
+type=colorDown
+intense=90
+!SetEffect
+	туман убрать
+type=fog
+intense=0
+!SetEffect
+aboutTV

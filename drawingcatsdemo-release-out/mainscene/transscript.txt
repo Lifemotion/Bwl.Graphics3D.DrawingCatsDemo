@@ -1,0 +1,149 @@
+СКРИПТ ДЛЯ ПЕРЕХОДА ОТ ЭКРАНА К ПОЛНОМУ
+
+
+	ЭФФЕКТЫ
+	искажение линз (какие там нафиг линзы?!)
+type=distortion
+distortionA=-0.000005
+scale=0.7
+!SetEffect
+	уменьшение цвета
+type=colorDown
+intense=70
+!SetEffect
+	туман убрать
+type=fog
+intense=0
+!SetEffect
+
+time=1
+!wait
+	тексты
+x=20
+y=20
+dx=40
+dy=15
+red=255
+green=255
+blue=255
+time=4
+startalpha=1
+endalpha=0
+font=fntSmall
+time=3
+text=.дисторсия линз
+!AddText
+time=0.5
+!wait
+time=4
+x=40
+y=40
+text=.операции с цветом
+!AddText
+
+	поворачиваем камеру, как нужно
+target=camera
+x=200
+z=-140
+y=0
+ry=2.9
+time=3
+type=PR
+!AddMover
+
+time=4
+!Wait
+	камера поплыла к исходной точке
+x=330
+y=10
+z=177
+ry=2.9
+rx=0
+rz=0
+time=4
+!AddMover
+
+time=6
+!Wait
+	убираем все источники света
+name=point
+!DeleteObject
+
+name=ambient
+!DeleteObject
+
+time=0.5
+!Wait
+
+type=ambient
+red=0
+blue=0
+green=0
+intense=0
+name=ambient
+!PlaceLight
+
+type=point
+red=0
+blue=0
+green=0
+intense=100
+name=point
+!PlaceLight
+
+time=0.5
+!Wait
+
+name=point
+!DeleteObject
+
+name=ambient
+!DeleteObject
+	ОСТАНАВЛИВАЕМ ЗВУК
+!StopSound
+	убираем эффекты
+	искажение линз не нужно
+type=distortion
+distortionA=0
+scale=0
+!SetEffect
+	уменьшение цвета не нужно
+type=colorDown
+intense=0
+!SetEffect
+	сидим в темноте
+time=2
+!Wait
+	надписи
+x=400
+y=390
+dx=40
+dy=15
+red=255
+green=255
+blue=255
+time=4
+startalpha=1
+endalpha=0
+font=fntBig
+time=3
+text=...
+!AddText
+
+time=1
+!wait
+
+time=3
+text=......
+x=440
+y=410
+!AddText
+
+time=0.5
+!wait
+
+time=3
+text=........
+x=4800
+y=430
+!AddText

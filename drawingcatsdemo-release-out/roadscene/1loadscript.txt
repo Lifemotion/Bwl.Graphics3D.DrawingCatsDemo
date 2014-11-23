@@ -1,0 +1,113 @@
+	УСТАНАВЛИВАЕМ ПАРАМЕТРЫ РЕНДЕРА
+!defaults
+renderer=normal
+rem renderer=fast
+!SetRenderDefaults
+!defaults
+
+	ЗАГРУЖАЕМ МОДЕЛИ
+	Земля
+name=mdlGround
+filename=..\roadscene\ground.x
+!LoadModel
+	Ящик
+name=mdlBox
+filename=..\roadscene\box.x
+!LoadModel
+	Телевизор
+name=mdlTV
+filename=..\roadscene\tv.x
+!LoadModel
+	Антенна
+name=mdlTVantenna
+filename=..\roadscene\tvantenna.x
+!LoadModel
+	Экран телевизора
+name=mdlTVscreen
+filename=..\roadscene\tvscreen.x
+!LoadModel
+	Столб
+name=mdlLightBar
+filename=..\roadscene\lightbar.x
+!LoadModel
+	Лампа
+name=mdlLightLamp
+filename=..\roadscene\lightLamp.x
+!LoadModel
+	Табличка
+name=mdlASTable
+filename=..\roadscene\asTable.x
+!LoadModel
+	Бордюры
+name=mdlBorders
+filename=..\roadscene\borders.x
+!LoadModel
+	Осциллограф
+name=mdlOsc
+filename=..\roadscene\oscilloscope.X
+!LoadModel
+
+	ЗАГРУЖАЕМ СПРАЙТЫ ДОЖДЯ
+name=texRain
+filename=..\roadscene\rain.bmp
+!LoadTexture
+
+name=sprRain
+texture=texRain
+x1=0
+y1=0
+x2=16
+y2=106
+scale=0.2
+minscale=0.05
+maxscale=1
+!DefineSprite
+
+	ВЫВОДИМ ОСНОВНЫЕ ОБЪЕКТЫ
+	Земля
+!Defaults
+shadowedBy=1
+name=objGround
+model=mdlGround
+!1PlaceModel
+model=mdlBorders
+!PlaceModel
+
+
+!Defaults
+	ЭФФЕКТЫ
+type=fog
+intense=95
+red=20
+green=20
+blue=30
+!SetEffect1
+
+
+
+	КАМЕРА
+x=0
+y=50
+z=0
+fov=100
+!SetCamera
+
+red=30
+blue=60
+green=30
+type=ambient
+!PlaceLight
+
+
+
+	ТЕНЬ
+index=1
+x1=-400
+x2=400
+y1=-400
+y2=400
+scale=1
+axis=y
+distance=-50
+enabled=1
+!SetShadowMap

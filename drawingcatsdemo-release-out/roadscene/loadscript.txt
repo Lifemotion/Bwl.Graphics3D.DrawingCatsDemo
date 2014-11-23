@@ -1,0 +1,183 @@
+	УСТАНАВЛИВАЕМ ПАРАМЕТРЫ РЕНДЕРА
+!defaults
+renderer=normal
+!SetRenderDefaults
+!defaults
+
+	ЗАГРУЖАЕМ МОДЕЛИ
+	Земля
+name=mdlGround
+filename=..\roadscene\ground.x
+!LoadModel
+	Ящик
+name=mdlBox
+filename=..\roadscene\box.x
+!LoadModel
+	Телевизор
+name=mdlTV
+filename=..\roadscene\tv.x
+!LoadModel
+	Антенна
+name=mdlTVantenna
+filename=..\roadscene\tvantenna.x
+!LoadModel
+	Экран телевизора
+name=mdlTVscreen
+filename=..\roadscene\tvscreen.x
+!LoadModel
+	Столб
+name=mdlLightBar
+filename=..\roadscene\lightbar.x
+!LoadModel
+	Лампа
+name=mdlLightLamp
+filename=..\roadscene\lightLamp.x
+!LoadModel
+	Табличка
+name=mdlASTable
+filename=..\roadscene\asTable.x
+!LoadModel
+	Бордюры
+name=mdlBorders
+filename=..\roadscene\borders.x
+!LoadModel
+	Осциллограф
+name=mdlOsc
+filename=..\roadscene\oscilloscope.X
+!LoadModel
+
+	ЗАГРУЖАЕМ СПРАЙТЫ ДОЖДЯ
+name=texRain
+filename=..\roadscene\rain.bmp
+!LoadTexture
+
+name=sprRain
+texture=texRain
+x1=0
+y1=0
+x2=16
+y2=106
+scale=0.2
+minscale=0.05
+maxscale=1
+!DefineSprite
+
+	ВЫВОДИМ ОСНОВНЫЕ ОБЪЕКТЫ
+	Земля
+!Defaults
+shadowedBy=1
+name=objGround
+model=mdlGround
+!PlaceModel
+model=mdlBorders
+!PlaceModel
+	Столб
+ry=-0.2
+model=mdlLightBar
+shadowsOn=1
+shadowedBy=0
+x=170
+y=80
+z=90
+!PlaceModel
+	Лампа на столбе
+name=objLamp
+model=mdlLightLamp
+shadowsOn=0
+!Placemodel
+name=0
+	[Источник света]
+z=30
+red=255
+blue=200
+green=255
+type=point
+intense=400
+attenuationA=0.0007
+name=lamp
+!PlaceLight
+	Ящики
+shadowsOn=1
+renderer=normal
+model=mdlBox
+scale=0.65
+x=190
+y=15
+z=50
+ry=-0.5
+!PlaceModel
+x=230
+y=15
+z=5
+ry=+0.3
+!PlaceModel
+	Телевизор
+scale=0.8
+renderer=fast
+model=mdlTV
+x=220
+y=55
+z=30
+ry=-1
+!PlaceModel
+renderer=fast
+lighting=none
+name=objTV
+model=mdlTVscreen
+!PlaceModel
+name=
+	Маленький ящик
+scale=0.3
+x=50
+z=-30
+y=7
+model=mdlBox
+lighting=full
+renderer=fast
+!PlaceModel
+
+!Defaults
+	ЭФФЕКТЫ
+type=fog
+intense=97
+red=30
+green=30
+blue=30
+!SetEffect
+	КАМЕРА
+x=-360
+y=50
+z=-170
+
+fov=100
+!SetCamera
+	CВЕТ
+red=20
+blue=25
+green=20
+red=0
+blue=0
+green=0
+type=ambient
+name=ambient
+!PlaceLight
+
+	ТЕНЬ
+index=1
+x1=-400
+x2=400
+y1=-400
+y2=400
+scale=1
+axis=y
+distance=-10
+enabled=1
+!SetShadowMap
+	ШРИФТ
+name=fntBig
+filename=..\fonts\mistral_big.bmp
+!LoadFont
+
+name=fntSmall
+filename=..\fonts\courier_small.bmp
+!LoadFont

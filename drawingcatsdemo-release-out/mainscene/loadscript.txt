@@ -1,0 +1,192 @@
+	УСТАНАВЛИВАЕМ ПАРАМЕТРЫ РЕНДЕРА
+!defaults
+renderer=fast
+lighting=full
+!SetRenderDefaults
+!defaults
+
+	ЗАГРУЖАЕМ МОДЕЛИ
+	Тортик
+name=mdlCake
+filename=..\mainscene\cake.x
+!LoadModel
+	Небесная коробка
+name=mdlSky
+filename=..\mainscene\skybox.x
+!LoadModel
+	Основа поверхности
+name=mdlGround
+filename=..\mainscene\ground.x
+!LoadModel
+	Стена 1
+name=mdlWall1
+filename=..\mainscene\wall1.x
+!LoadModel
+	Стена 2
+name=mdlWall2
+filename=..\mainscene\wall2.x
+!LoadModel
+	Деревья 1
+name=mdlWoods1
+filename=..\mainscene\greens1.x
+!LoadModel
+	Деревья 2
+name=mdlWoods2
+filename=..\mainscene\greens2.x
+!LoadModel
+	Бочка
+name=mdlBarrel
+filename=..\mainscene\barrel.x
+!LoadModel
+	Камень
+name=mdlRock
+filename=..\mainscene\Rock.x
+!LoadModel
+	Чайник (ржавый ;))
+name=mdlTeapot
+filename=..\mainscene\teapot.x
+!LoadModel
+	Причал
+name=mdlBridge
+filename=..\mainscene\bridge.x
+!LoadModel
+	Куб-компаньон
+name=mdlCube
+filename=..\mainscene\companion.x
+!LoadModel
+	Плита 1
+name=mdlPlate1
+filename=..\mainscene\plate1.x
+!LoadModel
+	Плита 2
+name=mdlPlate2
+filename=..\mainscene\plate2.x
+!LoadModel
+	Табличка
+name=mdlTable
+filename=..\mainscene\astable.x
+!LoadModel
+	Осциллограф
+name=mdlOscilloscope
+filename=..\mainscene\oscilloscope.x
+!LoadModel
+	ТЕКСТУРА ВОДЫ
+name=texWater
+filename=..\mainscene\water.bmp
+!LoadTexture
+
+	ВЫВОДИМ ОСНОВНЫЕ ОБЪЕКТЫ
+	Земля, стены и растительность
+!Defaults
+scale=2
+shadowedBy=0
+name=objGround
+model=mdlGround
+!PlaceModel
+name=objWall1
+model=mdlWall1
+!PlaceModel
+name=objWall2
+model=mdlWall2
+!PlaceModel
+renderer=fast
+texturing=nowhite
+name=objWoods1
+model=mdlWoods1
+!PlaceModel
+name=objWoods2
+model=mdlWoods2
+!PlaceModel
+	НЕБО!
+render=fast
+lighting=ambient
+texturing=normal
+model=mdlSky
+skybox=1
+!PlaceModel
+
+skybox=0
+renderer=fast
+texturing=normal
+lighting=full
+	Мост
+name=objBridge
+model=mdlBridge
+!PlaceModel
+	Вода
+x=-100
+z=-800
+y=-170
+name=objWater
+model=mdlWater
+!PlaceModel
+!Defaults
+	Кубик
+rx=-0.3
+ry=-0.4
+scale=1.5
+x=200
+y=-100
+z=-155
+name=objCube
+model=mdlCube
+!PlaceModel
+	Табличка
+scale=1
+x=400
+y=-88
+z=-60
+rx=-0.25
+ry=0
+rz=0.1
+texturing=bilinear
+model=mdlTable
+!PlaceModel
+	Осциллограф
+name=objOscilloscope
+x=-145
+y=-125
+z=-600
+ry=5.6
+rx=0
+rz=0
+texturing=normal
+model=mdlOscilloscope
+
+!PlaceModel
+!defaults
+x=330
+y=-30
+z=177
+fov=100
+ry=2.9
+
+!SetCamera
+!Stop
+	Камни
+scale=4
+x=440
+y=-125
+z=-220
+rx=-0.3
+rz=0
+ry=0.5
+name=objRocks
+model=mdlRock
+!PlaceModel
+scale=2
+x=370
+y=-150
+z=-250
+ry=-1
+rz=0.3
+!PlaceModel
+	ШРИФТ
+name=fntBig
+filename=..\fonts\mistral_big.bmp
+!LoadFont
+
+name=fntSmall
+filename=..\fonts\courier_small.bmp
+!LoadFont
+

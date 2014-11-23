@@ -1,0 +1,27 @@
+	текст о телевизоре
+x=190
+y=420
+dx=40
+dy=15
+red=255
+green=255
+blue=255
+time=4
+startalpha=1
+endalpha=0
+font=fntBig
+time=10
+text=Телевизор.. [F]
+!AddText
+	техническое
+font=fntSmall
+time=4
+x=20
+y=20
+text=.построение в текстуру
+!AddText
+
+x=40
+y=50
+text=.динамический свет и тень
+!AddText
